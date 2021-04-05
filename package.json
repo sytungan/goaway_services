@@ -4,7 +4,8 @@
   "description": "API services for Go Away application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -29,4 +30,5 @@
     "mongoose": "^5.12.3",
     "pug": "^3.0.2"
   }
+
 }
