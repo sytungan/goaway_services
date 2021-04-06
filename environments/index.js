@@ -11,7 +11,7 @@ const MONGO_URL = process.env.MONGO_URL || `mongodb+srv://gopro:twPTAOxzC2PnAAOt
 const SALT = process.env.SALT || 10
 
 // Google API
-const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || 'AIzaSyA66KwUrjxcFG5u0exynlJ45CrbrNe3hEc'
+const GOOGLE_MAPS_API_KEY = 'AIzaSyA66KwUrjxcFG5u0exynlJ45CrbrNe3hEc'
 
 module.exports = {
     PORT,
