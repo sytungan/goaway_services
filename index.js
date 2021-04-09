@@ -2,11 +2,8 @@ const express = require('express')
 const menu = require('./routes/menu')
 const user = require('./routes/user')
 const direction = require('./routes/direction')
-<<<<<<< HEAD
 const sign = require('./routes/sign')
-=======
 const place = require('./routes/place')
->>>>>>> ede59bf69b331a6f588c29cebb1a758446483c4f
 const { PORT } = require('./environments')
 const { mongoose } = require('./helpers')
 const app = express()
@@ -29,12 +26,9 @@ app.get('/', (req, res) => {
 app.use('/menu', menu)
 app.use('/user', user)
 app.use('/direction', direction)
-<<<<<<< HEAD
 app.use('/sign', sign)
-=======
 app.use('/place', place)
 
->>>>>>> ede59bf69b331a6f588c29cebb1a758446483c4f
 // Listener
 app.listen(PORT, (err) => {
     if (err) throw err
