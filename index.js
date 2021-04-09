@@ -2,6 +2,7 @@ const express = require('express')
 const menu = require('./routes/menu')
 const user = require('./routes/user')
 const direction = require('./routes/direction')
+const place = require('./routes/place')
 const { PORT } = require('./environments')
 const { mongoose } = require('./helpers')
 const app = express()
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 app.use('/menu', menu)
 app.use('/user', user)
 app.use('/direction', direction)
+app.use('/place', place)
 
 // Listener
 app.listen(PORT, (err) => {
