@@ -17,4 +17,6 @@ const UserSchema = mongoose.Schema({
         type: String
     }
 });
+
+
 module.exports = {UserEntity: mongoose.model('Member', UserSchema)};
