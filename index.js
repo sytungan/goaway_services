@@ -5,6 +5,7 @@ const direction = require('./routes/direction')
 const location = require('./routes/location')
 const sign = require('./routes/sign')
 const place = require('./routes/place')
+const geocoding = require('./routes/geocoding')
 const { PORT } = require('./environments')
 const { mongoose } = require('./helpers')
 const app = express()
@@ -30,6 +31,8 @@ app.use('/direction', direction)
 app.use('/sign', sign)
 app.use('/place', place)
 app.use('/location',location)
+app.use('/geocoding',geocoding)
+
 
 // Listener
 app.listen(PORT, (err) => {
