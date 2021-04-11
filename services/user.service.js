@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const { UserEntity } = require("../models");
 const { hashPassword, comparePassword } = require("../utils");
+const { upload } = require('../middlewares');
 
 module.exports = {
   init: async (req, res) => {
@@ -17,6 +18,9 @@ module.exports = {
       const user = new UserEntity({
         userName: req.body.userName,
         password: hashedPassword,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email
       });
       const user_ = await UserEntity.findOne({ userName: req.body.userName });
       if (user_ == null) {
@@ -75,6 +79,28 @@ module.exports = {
       res.status(200).json({ msg: "Updated" });
     } catch (err) {
       res.json({ msg: err });
+    }
+  },
+
+
+  setAvatar: async(req,res) => {
+    try {
+        const userUpdated = await UserEntity.updateOne(
+            {_id: req.params.id}, 
+            {$set: { 
+                avatar: req.file
+                }}
+            );
+        res.status(200).send(req.file);
+    }catch(err) {
+        res.send(400).json({msg: err});;
+    }
+  },
+
+  forgotPass: async (req,res)=>{
+    try {
+
+    } catch (error) {
     }
   },
 };

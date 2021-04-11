@@ -6,6 +6,7 @@ const {
   deleteUser,
   login,
   signUp,
+  forgotPass,
 } = require("../services/user.service");
 
 router.all("/", function (req, res, next) {
@@ -15,9 +16,13 @@ router.all("/", function (req, res, next) {
 });
 
 router.get("/", init);
+router.post('/forgotPass', forgotPass);
 router.post("/signUp", signUp);
 router.post("/login", login);
 router.get("/:id", getUser);
 router.delete("/:id", deleteUser);
+
+router.put('/setAvatar/:id', setAvatar);
+
 
 module.exports = router;
