@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const { UserEntity } = require("../models");
 const { hashPassword, comparePassword } = require("../utils");
+const { upload } = require('../middlewares');
 
 module.exports = {
   init: async (req, res) => {
@@ -77,4 +78,19 @@ module.exports = {
       res.json({ msg: err });
     }
   },
-};
+
+
+  setAvatar: async(req,res) => {
+    try {
+        const userUpdated = await UserEntity.updateOne(
+            {_id: req.params.id}, 
+            {$set: { 
+                avatar: req.file
+                }}
+            );
+        res.status(200).send(req.file);
+    }catch(err) {
+        res.send(400).json({msg: err});;
+    }
+  }
+}
