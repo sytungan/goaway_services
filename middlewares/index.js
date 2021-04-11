@@ -1,4 +1,4 @@
-const { upload } = require('./uploadMulter')
+const { upload } = require('./upload')
 
 module.exports = {
     upload

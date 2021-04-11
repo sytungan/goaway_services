@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   init,
   getUser,
+  setAvatar,
   deleteUser,
   login,
   signUp,
