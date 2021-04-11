@@ -2,6 +2,7 @@ const express = require('express')
 const menu = require('./routes/menu')
 const user = require('./routes/user')
 const direction = require('./routes/direction')
+const location = require('./routes/location')
 const sign = require('./routes/sign')
 const place = require('./routes/place')
 const { PORT } = require('./environments')
@@ -28,6 +29,7 @@ app.use('/user', user)
 app.use('/direction', direction)
 app.use('/sign', sign)
 app.use('/place', place)
+app.use('/location',location)
 
 // Listener
 app.listen(PORT, (err) => {
