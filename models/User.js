@@ -7,6 +7,9 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String
     },
+    avatar: {
+        type: Object
+    }
 })
 
 module.exports = {UserEntity: mongoose.model('Member', UserSchema)};
