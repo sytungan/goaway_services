@@ -17,6 +17,9 @@ module.exports = {
       const user = new UserEntity({
         userName: req.body.userName,
         password: hashedPassword,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email
       });
       const user_ = await UserEntity.findOne({ userName: req.body.userName });
       if (user_ == null) {
@@ -75,6 +78,12 @@ module.exports = {
       res.status(200).json({ msg: "Updated" });
     } catch (err) {
       res.json({ msg: err });
+    }
+  },
+  forgotPass: async (req,res)=>{
+    try {
+
+    } catch (error) {
     }
   },
 };
