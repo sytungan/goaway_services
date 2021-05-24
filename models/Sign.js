@@ -13,6 +13,9 @@ const SignSchema = mongoose.Schema({
     signDescription: {
         type:String
     },
+    signType:{
+        type:String
+    }
 })
 
 module.exports = {SignEntity: mongoose.model('TrafficSign',SignSchema)}

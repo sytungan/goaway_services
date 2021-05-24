@@ -2,16 +2,16 @@ const express = require('express')
 const {SignEntity} = require('../models');
 
 module.exports = {
-    init: async (req, res) => {
-        try {
+    getall: async (req, res) => {
+
+        try {          
           const sign = await SignEntity.find();
           res.status(200).json(sign);
         } catch (err) {
           res.status(400).json({ msg: err });
         }
     },
-    setSign: async (req, res) => {
-      
+    setSign: async (req, res) => {      
       await console.log(req.body);
       try {
         // console.log("hihi")
@@ -20,6 +20,7 @@ module.exports = {
           signIcon:req.body.signIcon,
           signName:req.body.signName,
           signDescription:req.body.signDescription,
+          signType:req.body.signType,
         }
         );
         console.log(sign)
@@ -40,7 +41,8 @@ module.exports = {
               signId: sign.signId,
               signIcon: sign.signIcon,
               signName: sign.signName,
-              signDescription: sign.signDescription
+              signDescription: sign.signDescription,
+              signType:sign.signType
             });
           } catch (err) {
             res.json({ msg: err });
