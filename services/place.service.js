@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 var convert = require("convert-units");
-const { GOOGLE_MAPS_API_KEY } = require("../environments");
+const { GOOGLE_MAPS_API_KEY, HERE_MAPS_API_KEY } = require("../environments");
 module.exports = {
   searchPlace: async (req, res) => {
     let data;
@@ -28,6 +28,32 @@ module.exports = {
     else {
         res.json({ msg: data.status })
     }
+  },
+  searchPlace2: async (req, res) => {
+    let data;
+    // Get data using get method
+    await axios
+      .get("https://places.ls.hereapi.com/places/v1/autosuggest", {
+        params: {
+          at: req.query.lat + "," + req.query.lng,
+          q: req.query.input,
+          apiKey: HERE_MAPS_API_KEY,
+        },
+      })
+      .then((response) => {
+        data = response.data;
+      });
+      data.results.forEach(function(result) {
+        delete result['bbox'];
+        delete result['category'];
+        delete result['href'];
+        delete result['type'];
+        delete result['resultType'];
+        delete result['id'];
+    });
+      return res
+        .status(200)
+        .json(data.results);
   },
   getPlace: async (req, res) => {
     let data;
