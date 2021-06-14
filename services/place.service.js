@@ -47,19 +47,25 @@ module.exports = {
       });
       data.results.forEach(function(result, index) {
         if (typeof result['category'] != 'undefined') {
+          let flag = false;
           jsonIcon.forEach(function(item) {
             let cat = result['category'];
             if (cat.indexOf(item.match) != -1) {
               result['icon'] = item.iconUrl;
+              flag = true
             }
           });
+          if (!flag) {
+            result['icon'] = jsonIcon[0].iconUrl;
+          }
+
         }
         else delete data.results[index];
 
         if (typeof result['position'] == 'undefined') {
           delete data.results[index];
         }
-        
+
         if (typeof result['vicinity'] != 'undefined') {
           if (result['vicinity'].indexOf(illegalChar) != 1) {
             result['vicinity'] = result['vicinity'].replace(illegalChar, ", ");

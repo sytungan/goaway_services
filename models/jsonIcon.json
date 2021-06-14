@@ -1,5 +1,9 @@
 [
    {
+      "match":"defaultIcon",
+      "iconUrl":""
+   },
+   {
        "match":"restaurant",
        "iconUrl":""
    },
@@ -62,5 +66,9 @@
    {
        "match":"outdoor-area-complex",
        "iconUrl":""
+   },
+   {
+      "match":"electronics-shop",
+      "iconUrl":""
    }
 ]
