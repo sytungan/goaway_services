@@ -46,19 +46,27 @@ module.exports = {
         data = response.data;
       });
       data.results.forEach(function(result, index) {
-        jsonIcon.forEach(function(item) {
-          let cat = result['category'];
-          if (cat.indexOf(item.match) != -1) {
-            result['icon'] = item.iconUrl;
-          }
-        });
+        if (typeof result['category'] != 'undefined') {
+          jsonIcon.forEach(function(item) {
+            let cat = result['category'];
+            if (cat.indexOf(item.match) != -1) {
+              result['icon'] = item.iconUrl;
+            }
+          });
+        }
+        else delete data.results[index];
+
         if (typeof result['position'] == 'undefined') {
-          delete data.results[index]
+          delete data.results[index];
         }
-        if (result['vicinity'].indexOf(illegalChar) != 1) {
-          result['vicinity'] = result['vicinity'].replace(illegalChar, ", ");
-          result['highlightedVicinity'] = result['highlightedVicinity'].replace(illegalChar, ", ");
+        
+        if (typeof result['vicinity'] != 'undefined') {
+          if (result['vicinity'].indexOf(illegalChar) != 1) {
+            result['vicinity'] = result['vicinity'].replace(illegalChar, ", ");
+            result['highlightedVicinity'] = result['highlightedVicinity'].replace(illegalChar, ", ");
+          }
         }
+        else delete data.results[index];
 
         delete result['category'];
         delete result['categoryTitle'];
