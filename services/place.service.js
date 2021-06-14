@@ -43,17 +43,26 @@ module.exports = {
       .then((response) => {
         data = response.data;
       });
-      data.results.forEach(function(result) {
+      data.results.forEach(function(result, index) {
+        if (typeof result['position'] == 'undefined') {
+          delete data.results[index]
+        }
         delete result['bbox'];
         delete result['category'];
         delete result['href'];
         delete result['type'];
         delete result['resultType'];
         delete result['id'];
-    });
+      });
+      let dataNotNull = []
+      data.results.forEach(function(result) {
+        if (result != null) {
+          dataNotNull.push(result)
+        }
+      });
       return res
         .status(200)
-        .json(data.results);
+        .json(dataNotNull);
   },
   getPlace: async (req, res) => {
     let data;
