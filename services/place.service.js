@@ -2,6 +2,8 @@ const express = require("express");
 const axios = require("axios");
 var convert = require("convert-units");
 const { GOOGLE_MAPS_API_KEY, HERE_MAPS_API_KEY } = require("../environments");
+var jsonIcon = require('../models/jsonIcon.json');
+const illegalChar = '<br/>'
 module.exports = {
   searchPlace: async (req, res) => {
     let data;
@@ -44,11 +46,23 @@ module.exports = {
         data = response.data;
       });
       data.results.forEach(function(result, index) {
+        jsonIcon.forEach(function(item) {
+          let cat = result['category'];
+          if (cat.indexOf(item.match) != -1) {
+            result['icon'] = item.iconUrl;
+          }
+        });
         if (typeof result['position'] == 'undefined') {
           delete data.results[index]
         }
-        delete result['bbox'];
+        if (result['vicinity'].indexOf(illegalChar) != 1) {
+          result['vicinity'] = result['vicinity'].replace(illegalChar, ", ");
+          result['highlightedVicinity'] = result['highlightedVicinity'].replace(illegalChar, ", ");
+        }
+
         delete result['category'];
+        delete result['categoryTitle'];
+        delete result['bbox'];
         delete result['href'];
         delete result['type'];
         delete result['resultType'];
