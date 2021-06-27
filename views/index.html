@@ -1811,11 +1811,20 @@ function IsJsonString(str){try{JSON.parse(str);}catch(e){return false;}
 return true;}
 String.prototype.replaceAll=function(replaceThis,withThis){var re=new RegExp(RegExp.quote(replaceThis),"g");return this.replace(re,withThis);};RegExp.quote=function(str){return str.replace(/([.?*+^$[\]\\(){}-])/g,"\\$1");};function syntaxHighlight(json){json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,function(match){var cls='number';if(/^"/.test(match)){if(/:$/.test(match)){cls='key';}else{cls='string';}}else if(/true|false/.test(match)){cls='boolean';}else if(/null/.test(match)){cls='null';}
 return '<span class="'+cls+'">'+match+'</span>';});}</script>
+        <div class="row">
+            <div class="col"><hr style="border-top: 1pt solid #ddd;"></div>
+        </div>
        <section class="footer-top padding-y">
             <div class="row">
                 <aside class="col-sm-2 col-md-2">
                     <h3 class="title"><b>Download</b></h6>
-                    </a> <a href="https://drive.google.com/file/d/1vruDiwgYcYQ_j3Thav3DGWA5DBgmYdlG/view?usp=sharing" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/YUvWrFb.png" height="20" width="123"></a>
+                    </a> <a href="https://firebasestorage.googleapis.com/v0/b/goaway-00.appspot.com/o/release%2Fapp-release.apk?alt=media&token=fe69f932-abe5-453b-98e2-e714afdd7897" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/YUvWrFb.png" height="20" width="123"></a>
+                </aside>
+                <aside class="col-sm-2 col-md-2">
+                    <h3 class="title"><b></b></h6>
+                    <br>
+                    <br>
+                    </a> <a href="https://drive.google.com/file/d/1vruDiwgYcYQ_j3Thav3DGWA5DBgmYdlG/view?usp=sharing" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/Vov5c6v.png" target="_blank" height="20" width="123"></a>
                 </aside>
             </div>
         </section>
