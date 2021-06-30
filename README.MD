@@ -5,7 +5,7 @@ This api services for our GoAway mobile application.
 
 ## Indices
 
-* [Ungrouped](#ungrouped)
+* [API](#ungrouped)
 
   * [DeleteSign](#1-deletesign)
   * [GetAllSign](#2-getallsign)
@@ -2786,4 +2786,4 @@ Duplicate
 
 ---
 [Back to top](#go-a-way)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2021-06-30 14:09:46 by [docgen](https://github.com/thedevsaddam/docgen)
+> GoPro Team
