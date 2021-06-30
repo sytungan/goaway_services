@@ -6,7 +6,7 @@
     <span class=badge>13</span></h3></div><div class=panel-body><p><div class=request-item><div class=panel-group id=accordion-Ungrouped><div class="panel panel-danger" id=jump-Ungrouped-DeleteSign><div class=panel-heading><small class="pull-right text-muted"></small><a class=text-danger data-toggle=collapse data-parent=#accordion-Ungrouped href=#collapse-Ungrouped-DeleteSign><h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>DeleteSign</strong> &nbsp;|&nbsp;
     <strong class="request-method border-danger">DELETE</strong>
     &nbsp;
-    https://goawayy.herokuapp.com/sign/</h4></a></div><div id=collapse-Ungrouped-DeleteSign class="panel-collapse collapse"><div class=panel-body><h5 class="label label-default">Description</h5><br><small><p>Delete a traffic sign</small><br><br><select class=resp-selector>
+    https://goawayy.herokuapp.com/sign/:signId</h4></a></div><div id=collapse-Ungrouped-DeleteSign class="panel-collapse collapse"><div class=panel-body><h5 class="label label-default">Description</h5><br><small><p>Delete a traffic sign</small><br><br><h5 class="label label-info">URL Variables</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>signId<td><td><p>ID of traffic sign</table><select class=resp-selector>
     <option value>Select Example Request/Response
     <option value=req_res_Ungrouped_DeleteSign_0_DeleteSign>DeleteSign</select><br><section id=req_res_Ungrouped_DeleteSign_0_DeleteSign style=display:none><h4>Example Request</h4><h5>URL: https://goawayy.herokuapp.com/sign/abcd</h5><h4>Example Response</h4><h5 class="label label-success">Body</h5><span class=resp-prettyprint>{
     &#34;msg&#34;: &#34;deleted&#34;
@@ -1921,13 +1921,12 @@
     &#34;user_ratings_total&#34;: 365,
     &#34;vicinity&#34;: &#34;201 Clarence Street, Sydney&#34;
     }
-    ]</span><div class=clearfix></div><h5 class="label label-info">Code:</h5><strong>200</strong></section></div></div></div><div class="panel panel-info" id=jump-Ungrouped-SearchPlace><div class=panel-heading><small class="pull-right text-muted">urlencoded</small>
-    <a class=text-info data-toggle=collapse data-parent=#accordion-Ungrouped href=#collapse-Ungrouped-SearchPlace><h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>SearchPlace</strong> &nbsp;|&nbsp;
+    ]</span><div class=clearfix></div><h5 class="label label-info">Code:</h5><strong>200</strong></section></div></div></div><div class="panel panel-info" id=jump-Ungrouped-SearchPlace><div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info data-toggle=collapse data-parent=#accordion-Ungrouped href=#collapse-Ungrouped-SearchPlace><h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>SearchPlace</strong> &nbsp;|&nbsp;
     <strong class="request-method border-info">GET</strong>
     &nbsp;
-    https://goawayy.herokuapp.com/place/</h4></a></div><div id=collapse-Ungrouped-SearchPlace class="panel-collapse collapse"><div class=panel-body><h5 class="label label-default">Description</h5><br><small><p>An API provides to find some locations on maps from with an text</small><br><br><h5 class="label label-info">Query</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>input<td>đại học bách khoa<td><p>Input text that you want to find a place</table><h5 class="label label-primary">Body</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>signId<td>_bbut<td><p>Id of traffic sign<tr><td>signIcon<td>bienbaouutien.png<td><p>Icon off traffic sign<tr><td>signName<td>Ưu tiên<td><p>Name of traffic sign<tr><td>signDescription<td>Ưu tiên cho những xe được ưu tiên<td><p>Description</table><select class=resp-selector>
+    https://goawayy.herokuapp.com/place/</h4></a></div><div id=collapse-Ungrouped-SearchPlace class="panel-collapse collapse"><div class=panel-body><h5 class="label label-default">Description</h5><br><small><p>An API provides to find some locations on maps from with an text</small><br><br><h5 class="label label-info">Query</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>input<td>đại học bách khoa<td><p>Input text that you want to find a place</table><select class=resp-selector>
     <option value>Select Example Request/Response
-    <option value=req_res_Ungrouped_SearchPlace_0_SearchPlace>SearchPlace</select><br><section id=req_res_Ungrouped_SearchPlace_0_SearchPlace style=display:none><h4>Example Request</h4><h5>URL: https://goawayy.herokuapp.com/place/?input=Đại học bách khoa cơ sở 2</h5><h5 class="label label-info">Query</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>input<td>Đại học bách khoa cơ sở 2<td><p>Input text that you want to find a place</table><h4>Example Response</h4><h5 class="label label-success">Body</h5><span class=resp-prettyprint>[
+    <option value=req_res_Ungrouped_SearchPlace_0_SearchPlace>SearchPlace</select><br><section id=req_res_Ungrouped_SearchPlace_0_SearchPlace style=display:none><h4>Example Request</h4><h5>URL: https://goawayy.herokuapp.com/place/?input=Đại học bách khoa cơ sở 2</h5><h5 class="label label-warning">Headers</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>Content-Type<td>application/x-www-form-urlencoded<td></table><h5 class="label label-info">Query</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody><tr><td>input<td>Đại học bách khoa cơ sở 2<td><p>Input text that you want to find a place</table><h5 class="label label-primary">Body</h5><table class="table table-hover"><thead><tr><th>Key<th>Value<th>Description<tbody></table><h4>Example Response</h4><h5 class="label label-success">Body</h5><span class=resp-prettyprint>[
     {
     &#34;formatted_address&#34;: &#34;268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh, Vietnam&#34;,
     &#34;geometry&#34;: {
@@ -2164,25 +2163,25 @@
     return true;}
     String.prototype.replaceAll=function(replaceThis,withThis){var re=new RegExp(RegExp.quote(replaceThis),"g");return this.replace(re,withThis);};RegExp.quote=function(str){return str.replace(/([.?*+^$[\]\\(){}-])/g,"\\$1");};function syntaxHighlight(json){json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,function(match){var cls='number';if(/^"/.test(match)){if(/:$/.test(match)){cls='key';}else{cls='string';}}else if(/true|false/.test(match)){cls='boolean';}else if(/null/.test(match)){cls='null';}
     return '<span class="'+cls+'">'+match+'</span>';});}</script>
-                <div class="row">
-                    <div class="col"><hr style="border-top: 1pt solid #ddd;"></div>
-                </div>
-               <section class="footer-top padding-y">
                     <div class="row">
-                        <aside class="col-sm-2 col-md-2">
-                            <h3 class="title"><b>Download</b></h6>
-                            </a> <a href="https://www.dropbox.com/s/re33apjf6psw2w8/Go_Away.apk?dl=1" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/YUvWrFb.png" height="20" width="123"></a>
-                        </aside>
-                        <aside class="col-sm-2 col-md-2">
-                            <h3 class="title"><b></b></h6>
-                            <br>
-                            <br>
-                            </a> <a href="https://drive.google.com/file/d/1vruDiwgYcYQ_j3Thav3DGWA5DBgmYdlG/view?usp=sharing" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/Vov5c6v.png" target="_blank" height="20" width="123"></a>
-                        </aside>
+                        <div class="col"><hr style="border-top: 1pt solid #ddd;"></div>
                     </div>
-                </section>
-                <section class="footer-copyright border-top">
-                <br>
-                    <p class="float-left text-muted"> © 2021 GoPro Team <br>All rights reserved </p>
-                    <p target="_blank" class="float-right text-muted"> <a href="#" data-abc="true">Privacy &amp; Cookies</a> &nbsp; &nbsp; <a href="#" data-abc="true">Accessibility</a> </p>
-                </section>
+                   <section class="footer-top padding-y">
+                        <div class="row">
+                            <aside class="col-sm-2 col-md-2">
+                                <h3 class="title"><b>Download</b></h6>
+                                </a> <a href="https://www.dropbox.com/s/re33apjf6psw2w8/Go_Away.apk?dl=1" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/YUvWrFb.png" height="20" width="123"></a>
+                            </aside>
+                            <aside class="col-sm-2 col-md-2">
+                                <h3 class="title"><b></b></h6>
+                                <br>
+                                <br>
+                                </a> <a href="https://drive.google.com/file/d/1vruDiwgYcYQ_j3Thav3DGWA5DBgmYdlG/view?usp=sharing" class="d-block mb-2" data-abc="true"><img class="img-responsive" src="https://i.imgur.com/Vov5c6v.png" target="_blank" height="20" width="123"></a>
+                            </aside>
+                        </div>
+                    </section>
+                    <section class="footer-copyright border-top">
+                    <br>
+                        <p class="float-left text-muted"> © 2021 GoPro Team <br>All rights reserved </p>
+                        <p target="_blank" class="float-right text-muted"> <a href="#" data-abc="true">Privacy &amp; Cookies</a> &nbsp; &nbsp; <a href="#" data-abc="true">Accessibility</a> </p>
+                    </section>
