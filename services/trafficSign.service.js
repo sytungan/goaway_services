@@ -61,5 +61,13 @@ module.exports = {
           res.json({ msg: err });
           res.status(404);
         }
-  },
+    },
+    deleteSign: async (req, res) => {
+      try {
+        const userRemoved = await SignEntity.deleteOne({ signId: req.params.signId });
+        res.status(200).json({ msg: "deleted" });
+      } catch (err) {
+        res.json({ msg: err });
+      }
+    }
 }
