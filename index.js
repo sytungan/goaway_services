@@ -8,6 +8,8 @@ const place = require('./routes/place')
 const geocoding = require('./routes/geocoding')
 const { PORT } = require('./environments')
 const { mongoose } = require('./helpers')
+const favicon = require('serve-favicon');
+const path = require('path')
 const app = express()
 
 // connected mongo database
@@ -22,7 +24,12 @@ app.use(express.json())
 app.set('view engine', 'pug');
 app.get('/', (req, res) => {
     res.render('index')
-  });
+});
+app.get('/architecture', (req, res) => {
+    res.render('architecture')
+});
+app.use(favicon(path.join(__dirname,'views','public','images','favicon.ico')));
+
 
 // Route
 app.use('/menu', menu)
