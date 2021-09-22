@@ -3,6 +3,7 @@ const menu = require('./routes/menu')
 const user = require('./routes/user')
 const direction = require('./routes/direction')
 const location = require('./routes/location')
+const img = require('./routes/image')
 const sign = require('./routes/sign')
 const place = require('./routes/place')
 const geocoding = require('./routes/geocoding')
@@ -39,6 +40,7 @@ app.use('/sign', sign)
 app.use('/place', place)
 app.use('/location',location)
 app.use('/geocoding',geocoding)
+app.use('/img64', img)
 
 
 // Listener
