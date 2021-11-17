@@ -43,7 +43,8 @@ module.exports = {
         },
       })
       .then((response) => {
-        data = response.data;
+        data = response.data
+        data.results = data.results.slice(0, Number(req.query.limit || 5))
       });
       data.results.forEach(function(result, index) {
         if (typeof result['category'] != 'undefined') {
