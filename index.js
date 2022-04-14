@@ -29,6 +29,12 @@ app.get('/', (req, res) => {
 app.get('/architecture', (req, res) => {
     res.render('architecture')
 });
+app.get('/privacy', (req, res) => {
+    res.render('privacy')
+});
+app.get('/term-condition', (req, res) => {
+    res.render('term_condition')
+});
 app.use(favicon(path.join(__dirname,'views','public','images','favicon.ico')));
 
 
