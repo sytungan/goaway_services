@@ -9,7 +9,9 @@ module.exports = {
       "Number 7": 3.99,
       "Number 45": 3.45,
     };
-
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
     return res.status(200).json({ menu: menu });
   },
 };
